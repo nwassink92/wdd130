@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
 #content {
     max-width: 1600px;
     margin: 0 auto;
@@ -33,6 +35,7 @@ main section {
 
 body {
     background-color: #7796CB;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
 header {
@@ -56,6 +59,7 @@ header {
 
 .msg h2 {
     color: #224870;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
 .msg p {
@@ -86,6 +90,7 @@ footer P a:hover {
 
 .home-title {
     color: #224870;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
 h4 {
