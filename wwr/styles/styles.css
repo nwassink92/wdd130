@@ -222,6 +222,43 @@ h4 {
 .card-img, .mountains {
     width: 100%;
 }
+/*Here begins the Page 2*/
+
+.salmon-card, .desolation-card, .grand-card {
+    margin: 200px 0;
+}
+
+.salmon-card {
+    text-align: left;
+}
+
+.desolation-card {
+    text-align: right;
+}
+
+.grand-card {
+    text-align: left;
+}
+
+.cardleft-img {
+    border: 10px solid #000000;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+.cardright-img {
+    border: 10px solid #000000;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+    width: 400px;
+    height: 400px;
+    float: right;
+    margin: 0 0 0 15px;
+}
 
 @media screen and (max-width: 900px) {
     #hero, .home-grid {
