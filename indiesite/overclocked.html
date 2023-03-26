@@ -32,18 +32,117 @@
         <main class="home-grid">
             <div id="background">
                 <section>
-                    <img src="images/overclocked1.png" class="card-img">
-                    <img src="images/overclocked2.jpg" class="card-img">
-                    <img src="images/overclocked3.jpg" class="card-img">
-                    <h2>OVERCLOCKED</h2>
-                    <ul>
-                        <li><b>Developer:</b> Magnesium Ninja</li>
-                        <li><b>Genre:</b> Action/Platformer</li>
-                        <li><b>Release Year:</b> 2018</li>
-                        <li><b>Time to Complete:</b> ~4 hours for the main story</li>
-                    </ul>
-                    <p>In a world run by cybernetic enhancements, a team of vigilantes rises up to fight off a virus that threatens the lives of everyone they know. Take control of Amber and smash your way through walls, robots, and other security measures in a quest to unravel the mysteries behind this virus and who would activate it. The catch: Amber is a glass-cannon and dies in one hit. Making it through each level alive requires skill and precision. <i>Overclocked</i> is a thrilling experience, as navigating each hallway is tense and exciting. Mastering Amber's movement is a treat, especially once you start realizing ways to improve your time completing each mission.</p>
-                    <p><b>Similar tastes:</b><i> Celeste, Super Meat Boy</i></p>
+                    <!-- Images used to open the lightbox -->
+                    <div class="row">
+                        <div class="column">
+                            <img src="images/overclocked1.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                        </div>
+                        <br>
+                        <h2>OVERCLOCKED</h2>
+                        <ul>
+                            <li><b>Developer:</b> Magnesium Ninja</li>
+                            <li><b>Genre:</b> Action/Platformer</li>
+                            <li><b>Release Year:</b> 2018</li>
+                            <li><b>Time to Complete:</b> ~4 hours for the main story</li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="column">
+                            <img src="images/overclocked2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                        </div>
+                        <p>In a world run by cybernetic enhancements, a team of vigilantes rises up to fight off a virus that threatens the lives of everyone they know. Take control of Amber and smash your way through walls, robots, and other security measures in a quest to unravel the mysteries behind this virus and who would activate it. The catch: Amber is a glass-cannon and dies in one hit. Making it through each level alive requires skill and precision. <i>Overclocked</i> is a thrilling experience, as navigating each hallway is tense and exciting. Mastering Amber's movement is a treat, especially once you start realizing ways to improve your time completing each mission.</p>
+                        <p><b>Similar tastes:</b><i> Celeste, Super Meat Boy</i></p>
+                        <div class="column">
+                            <img src="images/overclocked3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                        </div>
+                    </div>
+      
+                    <!-- The Modal/Lightbox -->
+                    <div id="myModal" class="modal">
+                        <span class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="modal-content">
+      
+                            <div class="mySlides">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="images/overclocked1.png" style="width:60%">
+                            </div>
+      
+                            <div class="mySlides">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="images/overclocked2.jpg" style="width:60%">
+                            </div>
+      
+                            <div class="mySlides">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="images/overclocked3.jpg" style="width:60%">
+                            </div>
+    
+                            <!-- Next/previous controls -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+                            <!-- Caption text -->
+                            <div class="caption-container">
+                                <p id="caption"></p>
+                            </div>
+      
+                            <!-- Thumbnail image controls -->
+                            <div class="column">
+                                <img class="demo" src="images/overclocked1.png" onclick="currentSlide(1)" alt="Overclocked Title Screen">
+                            </div>
+      
+                            <div class="column">
+                                <img class="demo" src="images/overclocked2.jpg" onclick="currentSlide(2)" alt="Overclocked Screenshot 1">
+                            </div>
+      
+                            <div class="column">
+                                <img class="demo" src="images/overclocked3.jpg" onclick="currentSlide(3)" alt="Overclocked Screenshot 2">
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // Open the Modal
+                        function openModal() {
+                            document.getElementById("myModal").style.display = "block";
+                            }
+                            
+                        // Close the Modal
+                        function closeModal() {
+                            document.getElementById("myModal").style.display = "none";
+                            }
+                            
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                            
+                        // Next/previous controls
+                        function plusSlides(n) {
+                            showSlides(slideIndex += n);
+                            }
+                            
+                        // Thumbnail image controls
+                        function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                            }
+                            
+                        function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("demo");
+                            var captionText = document.getElementById("caption");
+                            if (n > slides.length) {slideIndex = 1}
+                            if (n < 1) {slideIndex = slides.length}
+                            for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            slides[slideIndex-1].style.display = "block";
+                            dots[slideIndex-1].className += " active";
+                            captionText.innerHTML = dots[slideIndex-1].alt;
+                            }
+                    </script>
                 </section>
             </div>
         </main>
